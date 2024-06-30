@@ -13,17 +13,12 @@ df_1 = df.set_index('Date')
 # Date 인덱스를 datetime 형식으로 변환
 df_1.index = pd.to_datetime(df_1.index)
 
-
-# 상관계수 계산
-correlation = df_1['Power_Simulation'].corr(df_1['Power_Actual'])
-print(f'Correlation coefficient: {correlation}')
-
-# 시각화: Simulation과 Actual Power의 상관관계
+# Simulation과 Actual Power
 plt.figure()
 plt.scatter(df_1['Power_Simulation'], df_1['Power_Actual'])
 plt.xlabel('Power Simulation')
 plt.ylabel('Power Actual')
-plt.title(f'Simulation vs Actual Power (Correlation: {correlation:.2f})')
+plt.title(f'Simulation vs Actual Power')
 plt.grid(True)
 plt.show()
 
@@ -69,10 +64,10 @@ plt.legend()
 plt.grid(True)
 plt.show()
 
-# 실제 값과 시뮬레이션 값의 차이를 계산하여 설비 및 조명의 전력 사용량을 추정
+# 실제 값과 시뮬레이션 값의 차이를 계산하여 기타 설비 및 조명의 전력 사용량을 추정
 df_1['Power_Difference'] = df_1['Power_Actual'] - df_1['Power_Simulation']
 
-# 설비 및 조명 전력 사용량 시각화
+# 기타 설비 및 조명 전력 사용량 시각화
 plt.figure()
 plt.plot(df_1.index, df_1['Power_Difference'], label='Equipment and Lighting Power')
 plt.xlabel('Date')
