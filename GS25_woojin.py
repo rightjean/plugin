@@ -40,10 +40,3 @@ plt.figure()
 plt.scatter(df_daily_heating['Simulation'], df_daily_heating['Power'], label='Heating Season')
 plt.scatter(df_daily_cooling['Simulation'], df_daily_cooling['Power'], label='Cooling Season')
 plt.show()
-
-# Task : Heating Season, Cooling Season을 구분하여 두 가지 Simulation Model을 구현해올 것.
-# 1. 1년 중 몇 월부터 몇 월까지 Heating/Cooling Season인가? -> 간절기를 제거, Simulation에서도 구분할 것
-# 1-1. 데이터프레임에서 내가 원하는 날짜만 뽑아와야할 것.
-# 2. 해당 Season에 따른 Simulation Model을 구현 -> 두 가지 예측 모델이 나올 것
-# 3. 해당 코드를 밑에 붙여서 완성
-# 내가 만든 코드를 바탕으로
